@@ -1,6 +1,6 @@
 #need super user access
 sudo: required
-services: 
+services:  
   - docker
 
 //before deploy to AWS we setup the prerequite here
@@ -10,4 +10,4 @@ before_install:
 
 #coverage exits the npm run test. if not npm run test will wait for user i/p and travis ci will also wait forever and ever
 script:
-  - docker run manojm95/react-travis npm run test -- -- coverage
+  - docker run manojm95/react-travis npm run test -- --coverage
