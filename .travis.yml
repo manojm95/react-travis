@@ -1,6 +1,5 @@
 #need super user access
 sudo: required
-
 services: 
   - docker
 
@@ -10,6 +9,5 @@ before_install:
   - docker build -t manojm95/react-travis -f Dockerfile.dev .
 
 #coverage exits the npm run test. if not npm run test will wait for user i/p and travis ci will also wait forever and ever
-scripts:
+script:
   - docker run manojm95/react-travis npm run test -- -- coverage
-
