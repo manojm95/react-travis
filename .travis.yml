@@ -11,3 +11,16 @@ before_install:
 #coverage exits the npm run test. if not npm run test will wait for user i/p and travis ci will also wait forever and ever
 script:
   - docker run manojm95/react-travis npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "Docker-Travis"
+  env: "DockerTravis-env"
+  bucket_name: "elasticbeanstalk-us-east-1-514799671751"
+  bucket_path": "Docker-Travis" #same as app name
+  on:
+    branch: master
+  access_key_id: $ACCESS_KEY
+  secret_access_key:
+    secure: "$SECRET"
