@@ -18,7 +18,7 @@ deploy:
   app: "Docker-Travis"
   env: "DockerTravis-env"
   bucket_name: "elasticbeanstalk-us-east-1-514799671751"
-  bucket_path": "Docker-Travis" #same as app name
+  bucket_path: "Docker-Travis"
   on:
     branch: master
   access_key_id: $ACCESS_KEY
